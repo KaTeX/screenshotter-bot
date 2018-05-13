@@ -1,0 +1,28 @@
+{
+  "name": "katex-screenshotter-check-bot",
+  "version": "0.0.1",
+  "description": "KaTeX Screenshotter Check Bot",
+  "author": "ylemkimon <mail@ylem.kim>",
+  "license": "MIT",
+  "repository": "https://github.com/ylemkimon/screenshotter-bot.git",
+  "scripts": {
+    "dev": "nodemon --exec \"npm start\"",
+    "start": "probot run ./index.js",
+    "lint": "eslint index.js",
+    "test": "jest && npm run lint"
+  },
+  "dependencies": {
+    "probot": "github:ylemkimon/probot",
+    "got": "^8.3.1",
+    "url": "^0.11.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.2",
+    "smee-client": "^1.0.1"
+  },
+  "engines": {
+    "node": ">= 8.3.0"
+  }
+}
