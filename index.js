@@ -40,6 +40,8 @@ module.exports = (robot) => {
     });
 
     // https://developer.github.com/v3/activity/events/types/#statusevent
+    // it is assumed that `check_suite.requested` has been received and
+    // check runs have been created, before CircleCI test completes
     robot.on('status', async context => {
         const payload = context.payload;
         const state = payload.state;
