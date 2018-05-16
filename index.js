@@ -78,6 +78,7 @@ module.exports = (robot) => {
         if (state === 'pending' || !stateContext.startsWith('ci/circleci:')) {
             return;
         }
+
         const browser = stateContext.charAt(13).toUpperCase() +
             stateContext.substr(14);
         if (BROWSERS.indexOf(browser) === -1) {
@@ -89,6 +90,7 @@ module.exports = (robot) => {
         const checksList = await context.github.checks.listForRef(context.repo({
             check_name: CHECK_NAME(browser),
             ref: payload.sha,
+            // https://github.com/octokit/rest.js/issues/861
             headers: {
                 accept: 'application/vnd.github.antiope-preview+json',
             },
@@ -150,6 +152,7 @@ module.exports = (robot) => {
                 }
 
                 let text = '';
+                const failedTests = [];
                 for (let i = 0; i < artifacts.length; i++) {
                     if (artifacts[i].path.startsWith('diff/')) {
                         const imagePath = artifacts[i].path;
@@ -164,7 +167,7 @@ module.exports = (robot) => {
                             }
                         }
 
-                        robot.log(`${testName} failed`);
+                        failedTests.push(testName);
                         text += `## ${testName}
 ![${testName}](${artifacts[i].url})
 [[New Screenshot]](${newUrl})
@@ -172,12 +175,14 @@ module.exports = (robot) => {
 `;
                     }
                 }
+                const failedList = failedTests.join(', ');
 
+                robot.log(`${failedList} failed`);
                 params.conclusion = 'failure';
                 params.output = {
                     title: 'Screenshotter Failed',
                     summary: 'The verification of following screenshots on ' +
-                        `${browser} **failed**:`,
+                        `${browser} **failed**: ${failedList}`,
                     text,
                 };
                 break;
