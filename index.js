@@ -45,22 +45,23 @@ module.exports = (robot) => {
 
             robot.log(`Creating a check run for the screenshotter of ${browser}`);
             // https://developer.github.com/v3/checks/runs/#create-a-check-run
-            context.github.checks.create(context.repo({
-                name: CHECK_NAME(browser),
-                head_branch: checkSuite.head_branch,
-                head_sha: checkSuite.head_sha,
-                status: 'in_progress',
+            context.github.request(context.repo({
+                method: 'POST',
                 // https://github.com/octokit/rest.js/issues/862
-                conclusion: 'neutral',
-                completed_at: checkSuite.created_at,
+                url: '/repos/:owner/:repo/check-runs',
+                // https://github.com/octokit/rest.js/issues/861
+                headers: {
+                    accept: 'application/vnd.github.antiope-preview+json',
+                },
+                name: CHECK_NAME(browser),
+                head_sha: checkSuite.head_sha,
+                // https://github.com/octokit/rest.js/issues/874
+                head_branch: checkSuite.head_branch || undefined,
+                status: 'in_progress',
                 output: {
                     title: 'Screenshotter Running',
                     summary: `The verification of screenshots on ${browser}` +
                         ' is **running**.',
-                },
-                // https://github.com/octokit/rest.js/issues/861
-                headers: {
-                    accept: 'application/vnd.github.antiope-preview+json',
                 },
             }));
         }
