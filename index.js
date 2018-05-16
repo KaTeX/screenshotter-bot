@@ -7,6 +7,33 @@ const CHECK_NAME = browser => `Screenshotter - ${browser}`;
 module.exports = (robot) => {
     robot.log('The app is successfully loaded!');
 
+    // check suite is not automatically created for pull requests
+    // https://platform.github.community/t/checks-api-and-cross-repository-pull-requests/5858
+
+    // https://developer.github.com/v3/activity/events/types/#pullrequestevent
+    robot.on(['pull_request.opened', 'pull_request.synchronize'], async context => {
+        const payload = context.payload;
+        const pullRequest = payload.pull_request;
+        robot.log(`Received pull_request.${payload.action} from ` +
+            `${pullRequest.head.repo.full_name}`);
+
+        if (pullRequest.head.repo.full_name === pullRequest.base.repo.full_name) {
+            return;
+        }
+
+        robot.log(`Requesting a check suite for ${pullRequest.head.sha}`);
+        context.github.request(context.repo({
+            method: 'POST',
+            // https://github.com/octokit/rest.js/issues/869
+            url: '/repos/:owner/:repo/check-suite-requests',
+            // https://github.com/octokit/rest.js/issues/861
+            headers: {
+                accept: 'application/vnd.github.antiope-preview+json',
+            },
+            head_sha: pullRequest.head.sha,
+        }));
+    });
+
     // https://developer.github.com/v3/activity/events/types/#checksuiteevent
     robot.on('check_suite.requested', async context => {
         robot.log('Received check_suite.requested');
