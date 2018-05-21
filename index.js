@@ -161,7 +161,7 @@ module.exports = (robot) => {
 
                         let newUrl = '';
                         for (let j = 0; j < artifacts.length; j++) {
-                            if (artifacts[j].path.startsWith(`image/${testName}`)) {
+                            if (artifacts[j].path.startsWith(`new/${testName}`)) {
                                 newUrl = artifacts[j].url;
                                 break;
                             }
