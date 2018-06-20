@@ -12,8 +12,8 @@
     "test": "jest && npm run lint"
   },
   "dependencies": {
-    "probot": "github:ylemkimon/probot",
     "got": "^8.3.1",
+    "probot": "^6.2.0",
     "url": "^0.11.0"
   },
   "devDependencies": {

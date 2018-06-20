@@ -22,14 +22,7 @@ module.exports = (robot) => {
         }
 
         robot.log(`Requesting a check suite for ${pullRequest.head.sha}`);
-        context.github.request(context.repo({
-            method: 'POST',
-            // https://github.com/octokit/rest.js/issues/869
-            url: '/repos/:owner/:repo/check-suite-requests',
-            // https://github.com/octokit/rest.js/issues/861
-            headers: {
-                accept: 'application/vnd.github.antiope-preview+json',
-            },
+        context.github.checks.requestSuites(context.repo({
             head_sha: pullRequest.head.sha,
         }));
     });
@@ -45,18 +38,11 @@ module.exports = (robot) => {
 
             robot.log(`Creating a check run for the screenshotter of ${browser}`);
             // https://developer.github.com/v3/checks/runs/#create-a-check-run
-            context.github.request(context.repo({
-                method: 'POST',
-                // https://github.com/octokit/rest.js/issues/862
-                url: '/repos/:owner/:repo/check-runs',
-                // https://github.com/octokit/rest.js/issues/861
-                headers: {
-                    accept: 'application/vnd.github.antiope-preview+json',
-                },
+            context.github.checks.create(context.repo({
                 name: CHECK_NAME(browser),
                 head_sha: checkSuite.head_sha,
                 // https://github.com/octokit/rest.js/issues/874
-                head_branch: checkSuite.head_branch || undefined,
+                head_branch: '',
                 status: 'in_progress',
                 output: {
                     title: 'Screenshotter Running',
@@ -90,10 +76,6 @@ module.exports = (robot) => {
         const checksList = await context.github.checks.listForRef(context.repo({
             check_name: CHECK_NAME(browser),
             ref: payload.sha,
-            // https://github.com/octokit/rest.js/issues/861
-            headers: {
-                accept: 'application/vnd.github.antiope-preview+json',
-            },
         }));
         const data = checksList.data;
         if (!data.check_runs || data.check_runs.length === 0) {
@@ -109,9 +91,6 @@ module.exports = (robot) => {
             details_url: payload.target_url,
             status: 'completed',
             completed_at: payload.updated_at,
-            headers: {
-                accept: 'application/vnd.github.antiope-preview+json',
-            },
         });
 
         switch (payload.state) {
