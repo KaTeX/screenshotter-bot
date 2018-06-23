@@ -4,7 +4,7 @@
   "description": "KaTeX Screenshotter Check Bot",
   "author": "ylemkimon <mail@ylem.kim>",
   "license": "MIT",
-  "repository": "https://github.com/ylemkimon/screenshotter-bot.git",
+  "repository": "KaTeX/screenshotter-bot",
   "scripts": {
     "dev": "nodemon --exec \"npm start\"",
     "start": "probot run ./index.js",
