@@ -8,19 +8,20 @@
   "scripts": {
     "dev": "nodemon --exec \"npm start\"",
     "start": "probot run ./index.js",
+    "now-start": "PRIVATE_KEY=$(echo $PRIVATE_KEY_BASE64 | base64 -d) npm start",
     "lint": "eslint index.js",
     "test": "jest && npm run lint"
   },
   "dependencies": {
-    "got": "^8.3.1",
-    "probot": "^6.2.0",
+    "got": "^9.0.0",
+    "probot": "^7.0.1",
     "url": "^0.11.0"
   },
   "devDependencies": {
-    "eslint": "^4.14.0",
+    "eslint": "^5.3.0",
     "jest": "^23.1.0",
     "nodemon": "^1.17.5",
-    "smee-client": "^1.0.1"
+    "smee-client": "^1.0.2"
   },
   "engines": {
     "node": ">= 8.3.0"
