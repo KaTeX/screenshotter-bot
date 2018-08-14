@@ -17,6 +17,7 @@ See [Probot Docs](https://probot.github.io/docs/development/) for more details.
 ## Required Permissions & Subscriptions
 * **Commit statuses:** Read-only, subscription to `Status` event
 * **Checks:** Read & Write
+* **Pull requests:** Read & Write, subscription to 'Pull request' event
 
 ## Screenshots
 ### Running
