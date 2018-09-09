@@ -52,6 +52,9 @@ module.exports = (robot) => {
         robot.log('Received check_suite.requested');
         const payload = context.payload;
         const checkSuite = payload.check_suite;
+        if (checkSuite.head_branch === "gh-pages") {
+            return;
+        }
         createCheckRuns(robot, context, checkSuite);
     });
 
