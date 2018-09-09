@@ -21,8 +21,8 @@ module.exports = (robot) => {
             return;
         }
 
-        robot.log(`Requesting a check suite for ${pullRequest.head.sha}`);
-        context.github.checks.requestSuites(context.repo({
+        robot.log(`Creating a check suite for ${pullRequest.head.sha}`);
+        context.github.checks.createSuite(context.repo({
             head_sha: pullRequest.head.sha,
         }));
     });
@@ -41,8 +41,6 @@ module.exports = (robot) => {
             context.github.checks.create(context.repo({
                 name: CHECK_NAME(browser),
                 head_sha: checkSuite.head_sha,
-                // https://github.com/octokit/rest.js/issues/874
-                head_branch: '',
                 status: 'in_progress',
                 output: {
                     title: 'Screenshotter Running',
