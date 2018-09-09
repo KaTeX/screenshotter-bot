@@ -4,6 +4,25 @@ const got = require('got');
 const BROWSERS = ['Firefox', 'Chrome'];
 const CHECK_NAME = browser => `Screenshotter - ${browser}`;
 
+function createCheckRuns(robot, context, checkSuite) {
+    for (let i = 0; i < BROWSERS.length; i++) {
+        const browser = BROWSERS[i];
+
+        robot.log(`Creating a check run for the screenshotter of ${browser}`);
+        // https://developer.github.com/v3/checks/runs/#create-a-check-run
+        context.github.checks.create(context.repo({
+            name: CHECK_NAME(browser),
+            head_sha: checkSuite.head_sha,
+            status: 'in_progress',
+            output: {
+                title: 'Screenshotter Running',
+                summary: `The verification of screenshots on ${browser}` +
+                    ' is **running**.',
+            },
+        }));
+    }
+}
+
 module.exports = (robot) => {
     robot.log('The app is successfully loaded!');
 
@@ -22,9 +41,10 @@ module.exports = (robot) => {
         }
 
         robot.log(`Creating a check suite for ${pullRequest.head.sha}`);
-        context.github.checks.createSuite(context.repo({
+        const checkSuite = await context.github.checks.createSuite(context.repo({
             head_sha: pullRequest.head.sha,
         }));
+        createCheckRuns(robot, context, checkSuite.data);
     });
 
     // https://developer.github.com/v3/activity/events/types/#checksuiteevent
@@ -32,23 +52,7 @@ module.exports = (robot) => {
         robot.log('Received check_suite.requested');
         const payload = context.payload;
         const checkSuite = payload.check_suite;
-
-        for (let i = 0; i < BROWSERS.length; i++) {
-            const browser = BROWSERS[i];
-
-            robot.log(`Creating a check run for the screenshotter of ${browser}`);
-            // https://developer.github.com/v3/checks/runs/#create-a-check-run
-            context.github.checks.create(context.repo({
-                name: CHECK_NAME(browser),
-                head_sha: checkSuite.head_sha,
-                status: 'in_progress',
-                output: {
-                    title: 'Screenshotter Running',
-                    summary: `The verification of screenshots on ${browser}` +
-                        ' is **running**.',
-                },
-            }));
-        }
+        createCheckRuns(robot, context, checkSuite);
     });
 
     // https://developer.github.com/v3/activity/events/types/#statusevent
