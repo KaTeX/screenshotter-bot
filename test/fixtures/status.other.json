@@ -1,100 +1,96 @@
 {
-  "action": "requested",
-  "check_suite": {
-    "id": 1009770651,
-    "node_id": "MDEwOkNoZWNrU3VpdGUxMDA5NzcwNjUx",
-    "head_branch": "test-ss-bot",
-    "head_sha": "2c70e997118ada09d114005cedaa23a2a6b41cf4",
-    "status": "queued",
-    "conclusion": null,
-    "url": "https://api.github.com/repos/KaTeX/KaTeX/check-suites/1009770651",
-    "before": "0000000000000000000000000000000000000000",
-    "after": "2c70e997118ada09d114005cedaa23a2a6b41cf4",
-    "pull_requests": [
-      {
-        "url": "https://api.github.com/repos/KaTeX/KaTeX/pulls/2386",
-        "id": 463160636,
-        "number": 2386,
-        "head": {
-          "ref": "test-ss-bot",
-          "sha": "2c70e997118ada09d114005cedaa23a2a6b41cf4",
-          "repo": {
-            "id": 11195700,
-            "url": "https://api.github.com/repos/KaTeX/KaTeX",
-            "name": "KaTeX"
-          }
-        },
-        "base": {
-          "ref": "master",
-          "sha": "36f9788cd6aa402294fb7cbe98305e179a88d9ff",
-          "repo": {
-            "id": 11195700,
-            "url": "https://api.github.com/repos/KaTeX/KaTeX",
-            "name": "KaTeX"
-          }
-        }
-      }
-    ],
-    "app": {
-      "id": 16033,
-      "slug": "katex-screenshotter",
-      "node_id": "MDM6QXBwMTYwMzM=",
-      "owner": {
-        "login": "KaTeX",
-        "id": 31191489,
-        "node_id": "MDEyOk9yZ2FuaXphdGlvbjMxMTkxNDg5",
-        "avatar_url": "https://avatars0.githubusercontent.com/u/31191489?v=4",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/KaTeX",
-        "html_url": "https://github.com/KaTeX",
-        "followers_url": "https://api.github.com/users/KaTeX/followers",
-        "following_url": "https://api.github.com/users/KaTeX/following{/other_user}",
-        "gists_url": "https://api.github.com/users/KaTeX/gists{/gist_id}",
-        "starred_url": "https://api.github.com/users/KaTeX/starred{/owner}{/repo}",
-        "subscriptions_url": "https://api.github.com/users/KaTeX/subscriptions",
-        "organizations_url": "https://api.github.com/users/KaTeX/orgs",
-        "repos_url": "https://api.github.com/users/KaTeX/repos",
-        "events_url": "https://api.github.com/users/KaTeX/events{/privacy}",
-        "received_events_url": "https://api.github.com/users/KaTeX/received_events",
-        "type": "Organization",
-        "site_admin": false
-      },
-      "name": "KaTeX Screenshotter",
-      "description": "Shows the result of KaTeX screenshot tests using Check API.",
-      "external_url": "https://github.com/KaTeX/screenshotter-bot",
-      "html_url": "https://github.com/apps/katex-screenshotter",
-      "created_at": "2018-08-13T14:26:10Z",
-      "updated_at": "2018-08-13T14:26:10Z",
-      "permissions": {
-        "checks": "write",
-        "metadata": "read",
-        "pull_requests": "write",
-        "statuses": "read"
-      },
-      "events": [
-        "pull_request",
-        "status"
-      ]
-    },
-    "created_at": "2020-08-05T05:49:47Z",
-    "updated_at": "2020-08-05T05:49:47Z",
-    "latest_check_runs_count": 0,
-    "check_runs_url": "https://api.github.com/repos/KaTeX/KaTeX/check-suites/1009770651/check-runs",
-    "head_commit": {
-      "id": "2c70e997118ada09d114005cedaa23a2a6b41cf4",
-      "tree_id": "a28f14e720cf80a67fb0c360620addb0a8ec56c6",
-      "message": "Test Screenshotter Bot",
-      "timestamp": "2020-08-05T05:49:42Z",
+  "id": 10397550519,
+  "sha": "a3404550c2465df195b4c7e2081f74dd5a7aced6",
+  "name": "KaTeX/KaTeX",
+  "target_url": "https://deploy-preview-2388--katex.netlify.app",
+  "avatar_url": "https://avatars3.githubusercontent.com/in/13473?v=4",
+  "context": "netlify/katex/deploy-preview",
+  "description": "Deploy preview ready!",
+  "state": "success",
+  "commit": {
+    "sha": "a3404550c2465df195b4c7e2081f74dd5a7aced6",
+    "node_id": "MDY6Q29tbWl0MTExOTU3MDA6YTM0MDQ1NTBjMjQ2NWRmMTk1YjRjN2UyMDgxZjc0ZGQ1YTdhY2VkNg==",
+    "commit": {
       "author": {
-        "name": "ylemkimon",
-        "email": "y@ylem.kim"
+        "name": "KaTeX bot",
+        "email": "33710906+KaTeX-bot@users.noreply.github.com",
+        "date": "2020-08-05T06:57:58Z"
       },
       "committer": {
         "name": "GitHub",
-        "email": "noreply@github.com"
+        "email": "noreply@github.com",
+        "date": "2020-08-05T06:57:58Z"
+      },
+      "message": "Update ss_data.yaml",
+      "tree": {
+        "sha": "1049b9c9a3dd3da22fec61d508e51bbefb426fe8",
+        "url": "https://api.github.com/repos/KaTeX/KaTeX/git/trees/1049b9c9a3dd3da22fec61d508e51bbefb426fe8"
+      },
+      "url": "https://api.github.com/repos/KaTeX/KaTeX/git/commits/a3404550c2465df195b4c7e2081f74dd5a7aced6",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJfKlh2CRBK7hj4Ov3rIwAAdHIIAF0tiiSRz9TVVMHli7N+7M4f\nzEeSAL0KEEnz+t/XNoWhWdxvZzirUPksRJuOieiPDuYifmxbZgFghzWuRXYmMQhE\n88RskmSME6dXQtPjY8HkXuou1tYqRBjblUdiij5NXpJaaP0MgxzDzuVBLlsMqh2c\nxp0a/L/v6cl/hqw90EOSnjpx4yoBW2VUMuFG3w1dVtH6GYQhyOGw8ctld61yrkkM\ntpoIbajwjSg+QdcImjEqAZ9FiZ1vIxyx2xPEwf+LU2Ai+0lRunUMwL07fCSfR5/b\nw0YT8D6lfu+MuwQhtP881dhGQYDf7MN8+IYMbBw1RbL2UGuO/Gp4SzNw+FY7vho=\n=n6Bq\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 1049b9c9a3dd3da22fec61d508e51bbefb426fe8\nparent abf911fed13d12192945fcb8ae6049af31c2a15c\nauthor KaTeX bot <33710906+KaTeX-bot@users.noreply.github.com> 1596610678 +0900\ncommitter GitHub <noreply@github.com> 1596610678 +0900\n\nUpdate ss_data.yaml"
       }
-    }
+    },
+    "url": "https://api.github.com/repos/KaTeX/KaTeX/commits/a3404550c2465df195b4c7e2081f74dd5a7aced6",
+    "html_url": "https://github.com/KaTeX/KaTeX/commit/a3404550c2465df195b4c7e2081f74dd5a7aced6",
+    "comments_url": "https://api.github.com/repos/KaTeX/KaTeX/commits/a3404550c2465df195b4c7e2081f74dd5a7aced6/comments",
+    "author": {
+      "login": "KaTeX-bot",
+      "id": 33710906,
+      "node_id": "MDQ6VXNlcjMzNzEwOTA2",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/33710906?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/KaTeX-bot",
+      "html_url": "https://github.com/KaTeX-bot",
+      "followers_url": "https://api.github.com/users/KaTeX-bot/followers",
+      "following_url": "https://api.github.com/users/KaTeX-bot/following{/other_user}",
+      "gists_url": "https://api.github.com/users/KaTeX-bot/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/KaTeX-bot/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/KaTeX-bot/subscriptions",
+      "organizations_url": "https://api.github.com/users/KaTeX-bot/orgs",
+      "repos_url": "https://api.github.com/users/KaTeX-bot/repos",
+      "events_url": "https://api.github.com/users/KaTeX-bot/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/KaTeX-bot/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "abf911fed13d12192945fcb8ae6049af31c2a15c",
+        "url": "https://api.github.com/repos/KaTeX/KaTeX/commits/abf911fed13d12192945fcb8ae6049af31c2a15c",
+        "html_url": "https://github.com/KaTeX/KaTeX/commit/abf911fed13d12192945fcb8ae6049af31c2a15c"
+      }
+    ]
   },
+  "branches": [
+
+  ],
+  "created_at": "2020-08-05T07:03:09+00:00",
+  "updated_at": "2020-08-05T07:03:09+00:00",
   "repository": {
     "id": 11195700,
     "node_id": "MDEwOlJlcG9zaXRvcnkxMTE5NTcwMA==",
@@ -163,7 +159,7 @@
     "deployments_url": "https://api.github.com/repos/KaTeX/KaTeX/deployments",
     "created_at": "2013-07-05T09:01:54Z",
     "updated_at": "2020-08-05T02:26:24Z",
-    "pushed_at": "2020-08-05T05:49:43Z",
+    "pushed_at": "2020-08-05T06:57:59Z",
     "git_url": "git://github.com/KaTeX/KaTeX.git",
     "ssh_url": "git@github.com:KaTeX/KaTeX.git",
     "clone_url": "https://github.com/KaTeX/KaTeX.git",
@@ -182,7 +178,7 @@
     "mirror_url": null,
     "archived": false,
     "disabled": false,
-    "open_issues_count": 232,
+    "open_issues_count": 234,
     "license": {
       "key": "mit",
       "name": "MIT License",
@@ -191,7 +187,7 @@
       "node_id": "MDc6TGljZW5zZTEz"
     },
     "forks": 855,
-    "open_issues": 232,
+    "open_issues": 234,
     "watchers": 12237,
     "default_branch": "master"
   },
@@ -210,23 +206,23 @@
     "description": "Fast typesetting for the web"
   },
   "sender": {
-    "login": "ylemkimon",
-    "id": 888148,
-    "node_id": "MDQ6VXNlcjg4ODE0OA==",
-    "avatar_url": "https://avatars1.githubusercontent.com/u/888148?v=4",
+    "login": "netlify[bot]",
+    "id": 40209326,
+    "node_id": "MDM6Qm90NDAyMDkzMjY=",
+    "avatar_url": "https://avatars3.githubusercontent.com/in/13473?v=4",
     "gravatar_id": "",
-    "url": "https://api.github.com/users/ylemkimon",
-    "html_url": "https://github.com/ylemkimon",
-    "followers_url": "https://api.github.com/users/ylemkimon/followers",
-    "following_url": "https://api.github.com/users/ylemkimon/following{/other_user}",
-    "gists_url": "https://api.github.com/users/ylemkimon/gists{/gist_id}",
-    "starred_url": "https://api.github.com/users/ylemkimon/starred{/owner}{/repo}",
-    "subscriptions_url": "https://api.github.com/users/ylemkimon/subscriptions",
-    "organizations_url": "https://api.github.com/users/ylemkimon/orgs",
-    "repos_url": "https://api.github.com/users/ylemkimon/repos",
-    "events_url": "https://api.github.com/users/ylemkimon/events{/privacy}",
-    "received_events_url": "https://api.github.com/users/ylemkimon/received_events",
-    "type": "User",
+    "url": "https://api.github.com/users/netlify%5Bbot%5D",
+    "html_url": "https://github.com/apps/netlify",
+    "followers_url": "https://api.github.com/users/netlify%5Bbot%5D/followers",
+    "following_url": "https://api.github.com/users/netlify%5Bbot%5D/following{/other_user}",
+    "gists_url": "https://api.github.com/users/netlify%5Bbot%5D/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/netlify%5Bbot%5D/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/netlify%5Bbot%5D/subscriptions",
+    "organizations_url": "https://api.github.com/users/netlify%5Bbot%5D/orgs",
+    "repos_url": "https://api.github.com/users/netlify%5Bbot%5D/repos",
+    "events_url": "https://api.github.com/users/netlify%5Bbot%5D/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/netlify%5Bbot%5D/received_events",
+    "type": "Bot",
     "site_admin": false
   },
   "installation": {
