@@ -33,4 +33,4 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ## License
 
-[MIT](LICENSE) © 2020 ylemkimon <mail@ylem.kim>
+[MIT](LICENSE) © 2020 ylemkimon
