@@ -13,8 +13,8 @@
     "test": "jest && npm run lint"
   },
   "dependencies": {
-    "got": "^9.2.1",
-    "probot": "^7.1.1",
+    "got": "^11.5.1",
+    "probot": "^9.13.0",
     "url": "^0.11.0"
   },
   "devDependencies": {
